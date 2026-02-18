@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - The Cozy Bean</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .shop-header {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: var(--spacing-xl) 0;
+            text-align: center;
+        }
+
+        .filter-bar {
+            background-color: var(--white);
+            padding: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--spacing-md);
+        }
+
+        .filter-group {
+            display: flex;
+            gap: var(--spacing-sm);
+            align-items: center;
+        }
+
+        .filter-select {
+            padding: 8px 16px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            font-family: var(--font-main);
+            color: var(--text-color);
+            background-color: transparent;
+            cursor: pointer;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-xl);
+        }
+
+        .page-link {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: var(--white);
+            color: var(--text-color);
+            border: 1px solid #ddd;
+            transition: all 0.3s;
+        }
+
+        .page-link.active,
+        .page-link:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-color: var(--primary-color);
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-mug-hot"></i> The Cozy Bean
+            </a>
+            <div class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html" class="active" style="color: var(--accent-color);">Shop</a></li>
+                <li><a href="about.html">Our Story</a></li>
+                <li><a href="contact.html">Locations</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <a href="#"><i class="fas fa-search"></i></a>
+                <a href="#"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="shop-header">
+        <div class="container">
+            <h1 class="font-playfair">Our Shop</h1>
+            <p>Discover our range of ethically sourced coffee and handmade accessories.</p>
+        </div>
+    </header>
+
+    <section class="section" id="shop">
+        <div class="container">
+
+            <div class="filter-bar">
+                <div class="filter-group">
+                    <label>Category:</label>
+                    <select class="filter-select">
+                        <option>All Products</option>
+                        <option>Coffee Beans</option>
+                        <option>Brewing Gear</option>
+                        <option>Merchandise</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Price:</label>
+                    <select class="filter-select">
+                        <option>Any Price</option>
+                        <option>Under $20</option>
+                        <option>$20 - $50</option>
+                        <option>Over $50</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Sort By:</label>
+                    <select class="filter-select">
+                        <option>Featured</option>
+                        <option>Price: Low to High</option>
+                        <option>Price: High to Low</option>
+                        <option>Newest</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                            alt="Espresso Roast">
+                    </div>
+                    <div class="product-info">
+                        <h3>Signature Espresso Roast</h3>
+                        <p class="text-muted">Dark & Bold</p>
+                        <span class="price">$18.00</span>
+                        <a href="product.html" class="btn btn-primary btn-sm">Add to Cart</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                            alt="Ethiopian Yirgacheffe">
+                    </div>
+                    <div class="product-info">
+                        <h3>Ethiopian Yirgacheffe</h3>
+                        <p class="text-muted">Floral & Citrus</p>
+                        <span class="price">$22.00</span>
+                        <a href="product.html" class="btn btn-primary btn-sm">Add to Cart</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                            alt="Cold Brew Kit">
+                    </div>
+                    <div class="product-info">
+                        <h3>Cold Brew Starter Kit</h3>
+                        <p class="text-muted">Easy Home Brewing</p>
+                        <span class="price">$35.00</span>
+                        <a href="product.html" class="btn btn-primary btn-sm">Add to Cart</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1621939514649-28b12e81658d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                            alt="Ceramic Mug">
+                    </div>
+                    <div class="product-info">
+                        <h3>Artisan Ceramic Mug</h3>
+                        <p class="text-muted">Handmade</p>
+                        <span class="price">$15.00</span>
+                        <a href="product.html" class="btn btn-primary btn-sm">Add to Cart</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1512568400610-43a0bc712401?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                            alt="Pour Over">
+                    </div>
+                    <div class="product-info">
+                        <h3>V60 Pour Over Set</h3>
+                        <p class="text-muted">Precision Brewing</p>
+                        <span class="price">$28.00</span>
+                        <a href="product.html" class="btn btn-primary btn-sm">Add to Cart</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1527450379471-2ed4746f333c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                            alt="Coffee Scale">
+                    </div>
+                    <div class="product-info">
+                        <h3>Digital Coffee Scale</h3>
+                        <p class="text-muted">With Timer</p>
+                        <span class="price">$45.00</span>
+                        <a href="product.html" class="btn btn-primary btn-sm">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pagination">
+                <a href="#" class="page-link active">1</a>
+                <a href="#" class="page-link">2</a>
+                <a href="#" class="page-link">3</a>
+                <a href="#" class="page-link"><i class="fas fa-chevron-right"></i></a>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo" style="margin-bottom: 1rem; display: inline-flex;">The Cozy
+                        Bean</a>
+                    <p>Artisan coffee for the soul.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-links">
+                        <li>123 Coffee Lane</li>
+                        <li>Visakhapatnam, AP</li>
+                        <li>hello@thecozybean.com</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <small>&copy; 2026 The Cozy Bean. All rights reserved.</small>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

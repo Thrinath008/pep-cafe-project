@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - The Cozy Bean</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .about-hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1447933601403-0c6688de566e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-lg);
+            text-align: center;
+        }
+
+        .value-card {
+            padding: var(--spacing-lg);
+            background: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .value-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-lg);
+            position: relative;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto var(--spacing-md);
+        }
+
+        .process-line {
+            position: absolute;
+            top: 30px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #ddd;
+            z-index: 0;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .team-member {
+            text-align: center;
+            background: var(--white);
+            border-radius: 8px;
+            padding-bottom: var(--spacing-md);
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .team-member img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            margin-bottom: var(--spacing-md);
+        }
+
+        @media (max-width: 768px) {
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+
+            .process-line {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-mug-hot"></i> The Cozy Bean
+            </a>
+            <div class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html" class="active" style="color: var(--accent-color);">Our Story</a></li>
+                <li><a href="contact.html">Locations</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <a href="#"><i class="fas fa-search"></i></a>
+                <a href="#"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="about-hero">
+        <div class="container">
+            <h1 class="font-playfair" style="font-size: 3.5rem;">Our Story</h1>
+            <p class="lead" style="font-size: 1.25rem;">From a small bean to your daily cup.</p>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <div class="row" style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <h2 class="section-title">Established 2026</h2>
+                <p class="lead" style="font-size: 1.1rem; color: #555;">
+                    The Cozy Bean began as a humble dream in a small garage. We wanted to create more than just a place
+                    to get caffeine; we wanted to build a sanctuary. A place where every cup tells a story of ethical
+                    sourcing, meticulous roasting, and passionate brewing.
+                </p>
+                <p style="margin-top: 1rem; color: #555;">
+                    Today, we are proud to serve our community with beans sourced directly from farmers we know by name,
+                    roasted right here in Visakhapatnam.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background-color: var(--light-gray);">
+        <div class="container">
+            <h2 class="section-title">Our Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <i class="fas fa-leaf"></i>
+                    <h3>Sustainability</h3>
+                    <p>We use 100% compostable packaging and support eco-friendly farming practices.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-medal"></i>
+                    <h3>Quality</h3>
+                    <p>We only source the top 1% of Arabica beans, ensuring a superior taste profile.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Community</h3>
+                    <p>We believe in giving back. A portion of our profits goes to local charities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">The Process</h2>
+            <div class="process-steps">
+                <div class="process-line"></div>
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Source</h3>
+                    <p>Direct trade with farmers in Ethiopia, Brazil, and Colombia.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Roast</h3>
+                    <p>Small-batch roasting to bring out unique flavor notes.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Brew</h3>
+                    <p>Expertly crafted by our baristas for your perfect cup.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background-color: var(--bg-color);">
+        <div class="container">
+            <h2 class="section-title">Meet the Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1583335821035-236b3b5522cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        alt="Head Roaster">
+                    <h3>Alex Chen</h3>
+                    <p class="text-muted">Head Roaster</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        alt="Barista">
+                    <h3>Sarah Jones</h3>
+                    <p class="text-muted">Lead Barista</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1542156822-6924d1a71ace?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        alt="Manager">
+                    <h3>Mike Ross</h3>
+                    <p class="text-muted">Shop Manager</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo" style="margin-bottom: 1rem; display: inline-flex;">The Cozy
+                        Bean</a>
+                    <p>Artisan coffee for the soul.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-links">
+                        <li>123 Coffee Lane</li>
+                        <li>Visakhapatnam, AP</li>
+                        <li>hello@thecozybean.com</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <small>&copy; 2026 The Cozy Bean. All rights reserved.</small>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signature Espresso Roast - The Cozy Bean</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .product-container {
+            padding-top: 120px;
+            padding-bottom: var(--spacing-xl);
+        }
+
+        .product-main {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-xl);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .product-gallery img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .product-details h1 {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: var(--spacing-md);
+            display: block;
+        }
+
+        .product-meta {
+            margin-bottom: var(--spacing-lg);
+            color: #666;
+        }
+
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .quantity-selector button {
+            width: 40px;
+            height: 40px;
+            border: 1px solid #ddd;
+            background: #fff;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            transition: all 0.2s;
+        }
+
+        .quantity-selector button:hover {
+            background: var(--light-gray);
+        }
+
+        .quantity-selector input {
+            width: 60px;
+            height: 40px;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            font-family: var(--font-main);
+            font-size: 1rem;
+        }
+
+        .product-actions {
+            display: flex;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .product-tabs {
+            margin-top: var(--spacing-xl);
+        }
+
+        .tab-buttons {
+            display: flex;
+            border-bottom: 2px solid #ddd;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .tab-btn {
+            padding: var(--spacing-md) var(--spacing-lg);
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            position: relative;
+            color: #666;
+            transition: all 0.3s;
+        }
+
+        .tab-btn.active {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .tab-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .product-main {
+                grid-template-columns: 1fr;
+            }
+
+            .tab-buttons {
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-mug-hot"></i> The Cozy Bean
+            </a>
+            <div class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html" style="color: var(--accent-color);">Shop</a></li>
+                <li><a href="about.html">Our Story</a></li>
+                <li><a href="contact.html">Locations</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <a href="#"><i class="fas fa-search"></i></a>
+                <a href="#"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container product-container">
+        <div class="product-main">
+            <div class="product-gallery">
+                <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    alt="Espresso Roast">
+            </div>
+
+            <div class="product-details">
+                <p class="text-muted text-uppercase" style="letter-spacing: 2px; font-size: 0.9rem;">Coffee Beans</p>
+                <h1>Signature Espresso Roast</h1>
+                <span class="product-price">$18.00</span>
+                <p class="product-meta">A dark, bold roast with notes of chocolate and caramel. Perfect for your morning
+                    espresso shot or a rich latte.</p>
+
+                <div class="quantity-selector">
+                    <button class="decrease">-</button>
+                    <input type="number" value="1" min="1" max="10">
+                    <button class="increase">+</button>
+                </div>
+
+                <div class="product-actions">
+                    <button class="btn btn-primary">Add to Cart</button>
+                    <button class="btn btn-secondary">Buy Now</button>
+                </div>
+
+                <ul style="margin-top: 2rem; color: #666; list-style: circle; padding-left: 1.2rem;">
+                    <li>100% Arabica Beans</li>
+                    <li>Ethically Sourced</li>
+                    <li>Roasted Fresh Weekly</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="product-tabs">
+            <div class="tab-buttons">
+                <button class="tab-btn active" data-tab="desc">Description</button>
+                <button class="tab-btn" data-tab="brewing">Brewing Guide</button>
+                <button class="tab-btn" data-tab="ingredients">Ingredients</button>
+                <button class="tab-btn" data-tab="reviews">Reviews (12)</button>
+            </div>
+
+            <div id="desc" class="tab-content active">
+                <p>Our Signature Espresso Roast is the heart of The Cozy Bean. We spent months perfecting this blend to
+                    ensure it stands up beautifully to milk while being smooth enough to enjoy on its own. It features
+                    beans from Brazil and Colombia, roasted to a full city dark level.</p>
+                <p style="margin-top: 1rem;">Expect a heavy body, low acidity, and a lingering sweet finish.</p>
+            </div>
+            <div id="brewing" class="tab-content">
+                <p><strong>For Espresso:</strong> Use a fine grind. Dose 18g of coffee for a 36g yield in 25-30 seconds.
+                </p>
+                <p style="margin-top: 1rem;"><strong>For Moka Pot:</strong> Use a medium-fine grind. Fill the basket
+                    loosely without tamping.</p>
+            </div>
+            <div id="ingredients" class="tab-content">
+                <p>100% Whole Bean Arabica Coffee.</p>
+                <p style="margin-top: 1rem;"><strong>Allergens:</strong> None. Processed in a facility that also handles
+                    nuts.</p>
+            </div>
+            <div id="reviews" class="tab-content">
+                <div style="margin-bottom: 1.5rem;">
+                    <strong>Sarah J.</strong> <span style="color: gold;">★★★★★</span><br>
+                    <span class="text-muted">"Best beans I've bought in years. The crema is amazing!"</span>
+                </div>
+                <div>
+                    <strong>Mike T.</strong> <span style="color: gold;">★★★★☆</span><br>
+                    <span class="text-muted">"Great flavor, fast shipping. A bit pricey but worth it."</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="section" style="background-color: var(--light-gray);">
+        <div class="container">
+            <h2 class="section-title">You Might Also Like</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                            alt="Ethiopian Yirgacheffe">
+                    </div>
+                    <div class="product-info">
+                        <h3>Ethiopian Yirgacheffe</h3>
+                        <span class="price">$22.00</span>
+                        <a href="#" class="btn btn-primary btn-sm">View</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1621939514649-28b12e81658d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                            alt="Ceramic Mug">
+                    </div>
+                    <div class="product-info">
+                        <h3>Artisan Ceramic Mug</h3>
+                        <span class="price">$15.00</span>
+                        <a href="#" class="btn btn-primary btn-sm">View</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1527450379471-2ed4746f333c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                            alt="Coffee Scale">
+                    </div>
+                    <div class="product-info">
+                        <h3>Digital Coffee Scale</h3>
+                        <span class="price">$45.00</span>
+                        <a href="#" class="btn btn-primary btn-sm">View</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo" style="margin-bottom: 1rem; display: inline-flex;">The Cozy
+                        Bean</a>
+                    <p>Artisan coffee for the soul.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-links">
+                        <li>123 Coffee Lane</li>
+                        <li>Visakhapatnam, AP</li>
+                        <li>hello@thecozybean.com</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <small>&copy; 2026 The Cozy Bean. All rights reserved.</small>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
