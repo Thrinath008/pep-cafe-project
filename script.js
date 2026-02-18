@@ -10,7 +10,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (btn) btn.onclick = toggle;
     window.onscroll = () => nav.classList.toggle('scrolled', window.scrollY > 50);
-    qa('.nav-links a').forEach(a => a.onclick = () => links.classList.contains('active') && toggle());
+
+    // Fixed: explicit block ensures we don't return false preventing default navigation
+    qa('.nav-links a').forEach(a => a.onclick = () => {
+        if (links.classList.contains('active')) toggle();
+    });
 
     const qty = q('.quantity-selector input');
     if (qty) {
