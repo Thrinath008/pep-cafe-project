@@ -221,6 +221,8 @@ img {
 .hero-content h1 {
     font-size: 4rem;
     margin-bottom: var(--spacing-md);
+    color: #FFD700;
+    /* Bright gold for impact */
     animation: fadeInUp 1s ease-out;
 }
 
